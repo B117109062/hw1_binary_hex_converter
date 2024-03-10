@@ -1,0 +1,21 @@
+def convert_to_binary_and_hex(decimal_number):
+    binary_representation = bin(decimal_number)[2:]
+    hex_representation = hex(decimal_number)[2:].upper()
+    return binary_representation, hex_representation
+
+def main():
+    try:
+        decimal_input = int(input("請輸入一個10進位數字（0～255）: "))
+        
+        if 0 <= decimal_input <= 255:
+            binary_output, hex_output = convert_to_binary_and_hex(decimal_input)
+            print(f"二進位表示: {binary_output}")
+            print(f"十六進位表示: {hex_output}")
+        else:
+            print("輸入超出範圍，請輸入0到255之間的數字。")
+    
+    except ValueError:
+        print("請輸入有效的數字。")
+
+if __name__ == "__main__":
+    main()
